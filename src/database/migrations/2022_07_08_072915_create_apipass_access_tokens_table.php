@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('apipass_access_tokens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable()->index();
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->text('scopes')->nullable();
-            $table->longText('token')->nullable();
+            $table->longText('token');
+            $table->text('expDate')->nullable();
             $table->timestamps();
         });
     }

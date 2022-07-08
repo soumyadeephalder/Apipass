@@ -5,6 +5,7 @@
         "phpunit/phpunit": "^9.5",
         "mockery/mockery": "^1.5"
     },
+    "version": "1.0",
     "license": "MIT",
     "type": "library",
     "autoload": {
@@ -12,7 +13,8 @@
             "Deepsoumya\\Apipass\\": "src/"
         },
         "files": [
-            "src/helpers.php"
+            "src/Helpers.php",
+            "src/ManageToken.php"
         ]
     },
     "authors": [

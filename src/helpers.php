@@ -1,27 +1,25 @@
 <?php
 
-namespace App\Helpers;
+namespace Deepsoumya\Apipass;
 
-use Deepsoumya\ApiPass\Models\Token;
-use App\Models\User;
+use Deepsoumya\Apipass\Models\Token;
 use Illuminate\Http\Request;
 
-class ApiAuth
+class Helpers
 {
-    public static function loginToken(Request $request)
+    public static function loginToken(Request $request, $guard)
     {
         $data = [];
         $token = $request->header('Authorization');
         $token = str_replace("Bearer ", "", $token);
         // $user = User::where('token', $token)->count();
-        $tokenData = Token::where('token', $token)->first();
+        $tokenData = Token::where('apipass_access_tokens.token', $token)
+        ->join($guard, 'apipass_access_tokens.client_id', '=', $guard.'.id')
+        ->first();
         // return $tokenData;
         if ($tokenData) {
-            // $user = User::where('id', $tokenData->tokenable_id)
-            //     // ->select('email', 'id', 'first_name', 'last_name', 'mobile', 'company_name', 'address', 'city', 'state', 'zip_code', 'country')
-            //     ->first();
             $data['status'] = true;
-            $data['user'] = null;
+            $data['user'] = $tokenData;
             $data['error'] = [];
         } else {
             $data['status'] = false;

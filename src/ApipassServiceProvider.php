@@ -1,7 +1,9 @@
 <?php
 
-namespace Deepsoumya\ApiPass;
+namespace Deepsoumya\Apipass;
 
+use Deepsoumya\Apipass\Http\Middleware\ApipassMiddleware;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 class ApipassServiceProvider extends ServiceProvider
@@ -14,6 +16,8 @@ class ApipassServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $router = $this->app->make(Router::class);
+        $router->aliasMiddleware('apipass', ApipassMiddleware::class);
     }
 
     /**
