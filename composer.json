@@ -6,6 +6,7 @@
         "mockery/mockery": "^1.5"
     },
     "license": "MIT",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Deepsoumya\\ApiPass\\": "src/"
@@ -21,6 +22,7 @@
         }
     ],
     "require": {
+        "php": ">=^8.0",
         "lcobucci/jwt": "^4.1",
         "illuminate/database": "^9.19",
         "illuminate/auth": "^9.19",
@@ -38,5 +40,10 @@
                 "Deepsoumya\\ApiPass\\ApiPassServiceProvider"
             ]
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
