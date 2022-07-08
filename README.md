@@ -13,7 +13,7 @@
 
 ## Installation
 
-Dillinger requires [laravel](https://nodejs.org/) v7+ to latest.
+Dillinger requires **laravel** v7+ to latest.
 
 Install the dependencies and devDependencies and start the server.
 
