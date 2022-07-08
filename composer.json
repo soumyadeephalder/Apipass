@@ -1,0 +1,42 @@
+{
+    "name": "deepsoumya/apipass",
+    "description": "api token auth with malty pule user",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.5"
+    },
+    "license": "MTL",
+    "autoload": {
+        "psr-4": {
+            "Deepsoumya\\ApiPass\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "deepsoumya",
+            "email": "soumyadeephalder1@gmail.com"
+        }
+    ],
+    "require": {
+        "lcobucci/jwt": "^4.1",
+        "illuminate/database": "^9.19",
+        "illuminate/auth": "^9.19",
+        "illuminate/encryption": "^9.19",
+        "illuminate/routing": "^9.19",
+        "illuminate/http": "^9.19",
+        "illuminate/support": "^9.19"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "10.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Deepsoumya\\ApiPass\\ApiPassServiceProvider"
+            ]
+        }
+    }
+}
