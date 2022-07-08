@@ -9,7 +9,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Deepsoumya\\ApiPass\\": "src/"
+            "Deepsoumya\\Apipass\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -37,7 +37,7 @@
         },
         "laravel": {
             "providers": [
-                "Deepsoumya\\ApiPass\\ApiPassServiceProvider"
+                "Deepsoumya\\Apipass\\ApipassServiceProvider"
             ]
         }
     },
