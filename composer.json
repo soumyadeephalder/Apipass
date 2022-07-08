@@ -1,6 +1,6 @@
 {
     "name": "deepsoumya/apipass",
-    "description": "api token auth with malty pule user",
+    "description": "api token auth. under development",
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "mockery/mockery": "^1.5"
